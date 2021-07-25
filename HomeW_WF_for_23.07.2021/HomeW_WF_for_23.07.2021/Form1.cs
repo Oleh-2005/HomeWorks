@@ -39,10 +39,11 @@ namespace HomeW_WF_for_23._07._2021
 
         }
 
-        private void lbxFiles_SelectedIndexChanged(object sender, EventArgs e) 
+        private void lbxFiles_SelectedIndexChanged(object sender, EventArgs e) // Я не розумію , чому програма , коли дивиться на SelectedItem починає витягувати назву папки у якій знаходиться проєкт . Я спробував вручну змінити стартовий SelectedIndex , але це не допомогло .
         {
+            
             tbSize.Text = $"{(sender as ListBox).SelectedValue}";
-            string [] FullName = (lbxFiles.SelectedItem as FilesFromDesktop).Name.Split('.');
+            string [] FullName = lbxFiles.SelectedItem.ToString().Split('.');
             string NameWithoutEnd = "";
             for(int i = 0;i < FullName.Length; i++)
             {
